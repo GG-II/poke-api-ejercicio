@@ -1,3 +1,11 @@
+/*
+ * Pokédex - Buscador de Pokémon
+ * @author: Gerbert David Garcia
+ * @email: ggarcial17@miumg.edu.gt
+ * @description: Estilos CSS para la interfaz de búsqueda de Pokémon
+ * @version: 1.0
+ */
+
 * {
     margin: 0;
     padding: 0;
@@ -122,5 +130,176 @@ button:hover {
     
     #pokemonInput {
         min-width: 100%;
+    }
+}
+
+/* Estilos para la tarjeta del Pokémon */
+.pokemon-image {
+    margin-bottom: 20px;
+}
+
+#pokemonImg {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    padding: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+#pokemonImg:hover {
+    transform: scale(1.05);
+}
+
+.pokemon-info h2 {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+#pokemonId {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.pokemon-types {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.type-badge {
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Colores para tipos de Pokémon */
+.type-normal { background: #A8A878; }
+.type-fire { background: #F08030; }
+.type-water { background: #6890F0; }
+.type-electric { background: #F8D030; }
+.type-grass { background: #78C850; }
+.type-ice { background: #98D8D8; }
+.type-fighting { background: #C03028; }
+.type-poison { background: #A040A0; }
+.type-ground { background: #E0C068; }
+.type-flying { background: #A890F0; }
+.type-psychic { background: #F85888; }
+.type-bug { background: #A8B820; }
+.type-rock { background: #B8A038; }
+.type-ghost { background: #705898; }
+.type-dragon { background: #7038F8; }
+.type-dark { background: #705848; }
+.type-steel { background: #B8B8D0; }
+.type-fairy { background: #EE99AC; }
+
+.pokemon-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.detail-item {
+    text-align: center;
+}
+
+.detail-label {
+    display: block;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.detail-item span:last-child {
+    font-size: 1.2em;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Estadísticas del Pokémon */
+.pokemon-stats {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.pokemon-stats h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.stat-name {
+    font-weight: bold;
+    color: #667eea;
+    text-transform: capitalize;
+    min-width: 80px;
+}
+
+.stat-bar {
+    flex: 1;
+    height: 20px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    margin: 0 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.stat-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff6b6b 0%, #feca57 50%, #48dbfb 100%);
+    border-radius: 10px;
+    transition: width 0.8s ease;
+    width: 0%;
+}
+
+.stat-value {
+    font-weight: bold;
+    color: #333;
+    min-width: 35px;
+    text-align: right;
+}
+
+/* Responsive para stats */
+@media (max-width: 480px) {
+    .pokemon-details {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    #pokemonImg {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .pokemon-info h2 {
+        font-size: 1.8em;
     }
 }
