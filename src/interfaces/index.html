@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex - Buscador de Pokémon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Pokédex</h1>
+        
+        <div class="search-section">
+            <input type="text" id="pokemonInput" placeholder="Escribe el nombre o número del Pokémon...">
+            <button id="searchBtn">Buscar</button>
+            <button id="randomBtn">Pokémon Aleatorio</button>
+        </div>
+
+        <div id="loader" class="loader hidden">
+            <p>Buscando Pokémon... 🔄</p>
+        </div>
+
+        <div id="pokemonCard" class="pokemon-card hidden">
+            <div class="pokemon-image">
+                <img id="pokemonImg" src="" alt="Pokémon">
+            </div>
+            
+            <div class="pokemon-info">
+                <h2 id="pokemonName">Nombre del Pokémon</h2>
+                <p id="pokemonId">#001</p>
+                
+                <div class="pokemon-types" id="pokemonTypes">
+                    <!-- Los tipos aparecerán aquí -->
+                </div>
+                
+                <div class="pokemon-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Altura:</span>
+                        <span id="pokemonHeight">0.0 m</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Peso:</span>
+                        <span id="pokemonWeight">0.0 kg</span>
+                    </div>
+                </div>
+                
+                <div class="pokemon-stats" id="pokemonStats">
+                    <!-- Las estadísticas aparecerán aquí -->
+                </div>
+            </div>
+        </div>
+
+        <div id="error" class="error hidden">
+            <p>¡Pokémon no encontrado! 😞</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
