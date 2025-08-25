@@ -44,7 +44,6 @@ function validatePokemonData(data) {
     return data && data.name && data.id && data.sprites;
 }
 
-// Para usar en otros archivos
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { Pokemon, validatePokemonData };
 }
