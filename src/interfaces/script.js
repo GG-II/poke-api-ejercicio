@@ -6,7 +6,7 @@
  * @date: 23/08/2025
  */
 
-// Elementos del DOM
+
 const pokemonInput = document.getElementById('pokemonInput');
 const searchBtn = document.getElementById('searchBtn');
 const randomBtn = document.getElementById('randomBtn');
@@ -14,14 +14,14 @@ const loader = document.getElementById('loader');
 const pokemonCard = document.getElementById('pokemonCard');
 const errorDiv = document.getElementById('error');
 
-// Event listeners
+
 searchBtn.addEventListener('click', handleSearch);
 randomBtn.addEventListener('click', getRandomPokemon);
 pokemonInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') handleSearch();
 });
 
-// Función principal de búsqueda
+
 async function handleSearch() {
     const query = pokemonInput.value.trim().toLowerCase();
     if (!query) {
@@ -32,7 +32,7 @@ async function handleSearch() {
     await searchPokemon(query);
 }
 
-// Conectar con PokeAPI
+
 async function searchPokemon(query) {
     showLoader();
     
@@ -59,13 +59,11 @@ async function searchPokemon(query) {
 
 // Mostrar Pokemon en la interfaz
 function displayPokemon(pokemon) {
-    // Llenar información básica
     document.getElementById('pokemonImg').src = pokemon.getMainImage();
     document.getElementById('pokemonImg').alt = pokemon.name;
     document.getElementById('pokemonName').textContent = pokemon.name;
     document.getElementById('pokemonId').textContent = `#${pokemon.id.toString().padStart(3, '0')}`;
     
-    // Mostrar tipos
     const typesContainer = document.getElementById('pokemonTypes');
     typesContainer.innerHTML = '';
     pokemon.getTypeNames().forEach(type => {
@@ -75,11 +73,10 @@ function displayPokemon(pokemon) {
         typesContainer.appendChild(typeSpan);
     });
     
-    // Mostrar detalles
     document.getElementById('pokemonHeight').textContent = pokemon.getFormattedHeight();
     document.getElementById('pokemonWeight').textContent = pokemon.getFormattedWeight();
     
-    // Mostrar estadísticas básicas
+
     const statsContainer = document.getElementById('pokemonStats');
     statsContainer.innerHTML = '<h3>Estadísticas Base</h3>';
     
@@ -90,12 +87,11 @@ function displayPokemon(pokemon) {
         statsContainer.appendChild(statDiv);
     });
     
-    // Limpiar input y mostrar tarjeta
+
     pokemonInput.value = '';
     showPokemonCard();
 }
 
-// Crear elemento de estadística
 function createStatElement(name, value) {
     const statDiv = document.createElement('div');
     statDiv.className = 'stat-item';
@@ -111,13 +107,13 @@ function createStatElement(name, value) {
     return statDiv;
 }
 
-// Pokémon aleatorio
+
 function getRandomPokemon() {
     const randomId = Math.floor(Math.random() * 1010) + 1;
     searchPokemon(randomId.toString());
 }
 
-// Funciones de interfaz
+
 function showLoader() {
     hideAll();
     loader.classList.remove('hidden');
@@ -140,7 +136,7 @@ function hideAll() {
     errorDiv.classList.add('hidden');
 }
 
-// Funciones auxiliares (importar de pokemon.js si es posible)
+
 class Pokemon {
     constructor(data) {
         this.id = data.id;
